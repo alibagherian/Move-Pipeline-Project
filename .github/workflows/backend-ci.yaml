@@ -20,7 +20,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: 'latest'
+          python-version: 5
 
       - run: python -m pip install --upgrade pip setuptools wheel
       - name: Install the code linting and formatting tool Ruff
@@ -38,7 +38,7 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: 'latest'
+          python-version: 5
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
@@ -57,7 +57,7 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: 'latest'
+          python-version: 5
 
       - name: Install dependencies
         run: |
