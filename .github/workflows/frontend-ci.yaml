@@ -27,12 +27,8 @@ jobs:
       - uses: actions/cache@v4
         with:
         path: ~/ .npm
-        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
 
       - run: cd frontend && npm ci
-
       - run: cd frontend && npm run lint
 ---
  TEST:
@@ -49,9 +45,6 @@ jobs:
       - uses: actions/cache@v4
         with:
         path: ~/ .npm
-        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
  
       - run: cd frontend && npm ci
 
@@ -71,9 +64,7 @@ jobs:
       - uses: actions/cache@v4
         with:
         path: ~/ .npm
-        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node- 
+
       - run: cd frontend && npm ci
       - run: cd frontend && npm run test
 
