@@ -4,13 +4,13 @@ on:
     paths:
       -'frontend/**'
     branches:       
-      - master
+      - main
         
   pull_request:
     paths:
       -'frontend/**'  
     branches: 
-      - master
+      - main
 
 jobs:
   LINT:
