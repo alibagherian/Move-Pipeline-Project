@@ -1,4 +1,4 @@
-name: frontendWorkflow
+name: frontendCIWorkflow
 on:
   workflow_dispatch:
     paths:
@@ -26,6 +26,9 @@ jobs:
         uses: actions/cache@v4  
         with:
           path: ~/.npm  
+          key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-npm-
 
       - name: Install dependencies
         run: cd starter/frontend && npm ci
@@ -46,6 +49,9 @@ jobs:
         uses: actions/cache@v4  
         with:
           path: ~/.npm  
+          key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-npm-
 
       - name: Install dependencies 
         run: cd starter/frontend && npm ci
@@ -66,6 +72,9 @@ jobs:
         uses: actions/cache@v4  
         with:
           path: ~/.npm  
+          key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-npm-          
 
       - name: Install dependencies
         run: cd starter/frontend && npm ci    
