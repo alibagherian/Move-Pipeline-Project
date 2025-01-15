@@ -25,7 +25,7 @@ jobs:
             python -m pip install --upgrade pip setuptools wheel
             pip install pipenv       
       - name: install project dependencies
-        run: pipenv install ---dev
+        run: pipenv install --dev
       - name: run lint
         run:  pipenv run lint
   TEST:
@@ -42,7 +42,7 @@ jobs:
               python -m pip install --upgrade pip setuptools wheel        
               pip install pipenv
       - name: install project dependencies
-        run: pipenv install ---dev         
+        run: pipenv install --dev         
       - name: run tests
         run:  pipenv run test
 
