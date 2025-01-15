@@ -25,10 +25,22 @@ jobs:
             cd starter/backend 
             python -m pip install --upgrade pip setuptools wheel
             pip install pipenv       
-      - name: install project dependencies
+      - name: Debug information
+        run: |
+        pwd
+        ls -la
+        cat Pipfile
+      - name: Install project dependencies
         run: pipenv install --dev
-      - name: run lint
-        run:  pipenv run lint
+      - name: Run lint
+         run: |
+          pipenv --venv
+          pipenv run which flake8
+           pipenv run lint
+    #  - name: install project dependencies
+    #   run: pipenv install --dev
+    #  - name: run lint
+    #    run:  pipenv run lint
   TEST:
     runs-on: ubuntu-latest
     steps:
